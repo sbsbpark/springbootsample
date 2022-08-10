@@ -1,0 +1,36 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  datasource:
+    pool-name: hikari-cp
+    maximum-pool-size: 4
+    minimum-idle: 2
+    connectionTestQuery: SELECT 1
+    jdbc-url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  devtools:
+    livereload:
+      enabled: true
+  restart:
+    enabled: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:sql/schema.sql
+      data-locations: classpath:sql/data.sql
+
+server:  
+  port: ${PORT:8080}
+
+# Mybatis
+mybatis:
+  configuration:
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
+    map-underscore-to-camel-case: true
