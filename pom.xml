@@ -11,6 +11,7 @@
 	<groupId>com.sample</groupId>
 	<artifactId>api</artifactId>
 	<version>v1</version>
+	<packaging>jar</packaging>
 	<name>sample</name>
 	<description>Sample Api Service</description>
 	<properties>
